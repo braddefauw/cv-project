@@ -1,4 +1,7 @@
 import React from "react";
+import Education from "./Education";
+import Experience from "./Experience";
+import GeneralPreview from "./GeneralPreview";
 
 class General extends React.Component {
   constructor(props) {
@@ -23,43 +26,48 @@ class General extends React.Component {
     
     this.setState(
       {[name]: value}
-      );
+    );
   }
 
   handleSubmit(event) {
-    alert(`Name: ${this.state.name}, Email: ${this.state.email}, Phone: ${this.state.phone}`);
+    alert(`Name: ${this.state.firstName}, Email: ${this.state.email}, Phone: ${this.state.phone}`);
     event.preventDefault();
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          First Name:
-          <input name="firstName" type="text" value={this.state.firstName} onChange={this.handleChange} />
-        </label>
-        <label>
-          Last Name:
-          <input name="lastName" type="text" value={this.state.lastName} onChange={this.handleChange} />
-        </label>
-        <label>
-          Title:
-          <input name="title" type="text" value={this.state.title} onChange={this.handleChange} />
-        </label>
-        <label>
-          Address:
-          <input name="address" type="text" value={this.state.address} onChange={this.handleChange} />
-        </label>
-        <label>
-          Email:
-          <input name="email" type="email" value={this.state.email} onChange={this.handleChange} />
-        </label>
-        <label>
-          Phone Number:
-          <input name="phone" type="tel" value={this.state.phone} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            First Name:
+            <input name="firstName" type="text" value={this.state.firstName} onChange={this.handleChange} />
+          </label>
+          <label>
+            Last Name:
+            <input name="lastName" type="text" value={this.state.lastName} onChange={this.handleChange} />
+          </label>
+          <label>
+            Title:
+            <input name="title" type="text" value={this.state.title} onChange={this.handleChange} />
+          </label>
+          <label>
+            Address:
+            <input name="address" type="text" value={this.state.address} onChange={this.handleChange} />
+          </label>
+          <label>
+            Email:
+            <input name="email" type="email" value={this.state.email} onChange={this.handleChange} />
+          </label>
+          <label>
+            Phone Number:
+            <input name="phone" type="tel" value={this.state.phone} onChange={this.handleChange} />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+        <Experience />
+        <Education />
+        <GeneralPreview info={this.state}/>
+      </div>
     )
   }
 }
