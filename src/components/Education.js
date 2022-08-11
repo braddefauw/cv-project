@@ -1,5 +1,4 @@
 import React from "react";
-import EducationPreview from "./EducationPreview";
 
 class Education extends React.Component {
     constructor(props) {
@@ -47,7 +46,6 @@ class Education extends React.Component {
                 </label>
                 <input type="submit" value="Submit" />
                 </form>
-                <EducationPreview info={this.state}/>
             </div>
         )
     }

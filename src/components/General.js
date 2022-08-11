@@ -1,68 +1,36 @@
 import React from "react";
-import GeneralPreview from "./GeneralPreview";
 
 class General extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      firstName: '',
-      lastName: '',
-      title: '',
-      address: '',
-      email: '',
-      phone: '',
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-    
-    this.setState(
-      {[name]: value}
-    );
-  }
-
-  handleSubmit(event) {
-    alert(`Name: ${this.state.firstName}, Email: ${this.state.email}, Phone: ${this.state.phone}`);
-    event.preventDefault();
-  }
-
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.props.handleSubmit}>
           <label>
             First Name:
-            <input name="firstName" type="text" value={this.state.firstName} onChange={this.handleChange} />
+            <input name="firstName" type="text" defaultValue={this.props.general.firstName} onChange={this.props.handleChange} />
           </label>
           <label>
             Last Name:
-            <input name="lastName" type="text" value={this.state.lastName} onChange={this.handleChange} />
+            <input name="lastName" type="text" defaultValue={this.props.general.lastName} onChange={this.props.handleChange} />
           </label>
           <label>
             Title:
-            <input name="title" type="text" value={this.state.title} onChange={this.handleChange} />
+            <input name="title" type="text" defaultValue={this.props.general.title} onChange={this.props.handleChange} />
           </label>
           <label>
             Address:
-            <input name="address" type="text" value={this.state.address} onChange={this.handleChange} />
+            <input name="address" type="text" defaultValue={this.props.general.address} onChange={this.props.handleChange} />
           </label>
           <label>
             Email:
-            <input name="email" type="email" value={this.state.email} onChange={this.handleChange} />
+            <input name="email" type="email" defaultValue={this.props.general.email} onChange={this.props.handleChange} />
           </label>
           <label>
             Phone Number:
-            <input name="phone" type="tel" value={this.state.phone} onChange={this.handleChange} />
+            <input name="phone" type="tel" defaultValue={this.props.general.phone} onChange={this.props.handleChange} />
           </label>
           <input type="submit" value="Submit" />
         </form>
-        <GeneralPreview info={this.state}/>
       </div>
     )
   }

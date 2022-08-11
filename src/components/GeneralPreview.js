@@ -4,7 +4,14 @@ class GeneralPreview extends React.Component {
     render(){
         return(
             <div>
-                <h1>Hello {this.props.info.firstName}</h1>
+                <ul>
+                    <li>First Name: {this.props.info.firstName}</li>
+                    <li>Last Name: {this.props.info.lastName}</li>
+                    <li>Title: {this.props.info.title}</li>
+                    <li>Address: {this.props.info.address}</li>
+                    <li>Email: {this.props.info.email}</li>
+                    <li>Phone: {this.props.info.phone}</li>
+                </ul>
             </div>
         )
     }
