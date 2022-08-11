@@ -1,4 +1,5 @@
 import React from "react";
+import EducationPreview from "./EducationPreview";
 
 class Education extends React.Component {
     constructor(props) {
@@ -29,23 +30,26 @@ class Education extends React.Component {
     }
 
     render() {
-    return (
-        <form onSubmit={this.handleSubmit}>
-        <label>
-            School:
-            <input name="school" type="text" value={this.state.name} onChange={this.handleChange} />
-        </label>
-        <label>
-            Major:
-            <input name="major" type="text" value={this.state.email} onChange={this.handleChange} />
-        </label>
-        <label>
-            Graduation Year:
-            <input name="gradYear" type="num" value={this.state.phone} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-        </form>
-    )
+        return (
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                <label>
+                    School:
+                    <input name="school" type="text" value={this.state.school} onChange={this.handleChange} />
+                </label>
+                <label>
+                    Major:
+                    <input name="major" type="text" value={this.state.major} onChange={this.handleChange} />
+                </label>
+                <label>
+                    Graduation Year:
+                    <input name="gradYear" type="num" value={this.state.gradYear} onChange={this.handleChange} />
+                </label>
+                <input type="submit" value="Submit" />
+                </form>
+                <EducationPreview info={this.state}/>
+            </div>
+        )
     }
 }
 

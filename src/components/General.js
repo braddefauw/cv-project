@@ -1,6 +1,4 @@
 import React from "react";
-import Education from "./Education";
-import Experience from "./Experience";
 import GeneralPreview from "./GeneralPreview";
 
 class General extends React.Component {
@@ -64,8 +62,6 @@ class General extends React.Component {
           </label>
           <input type="submit" value="Submit" />
         </form>
-        <Experience />
-        <Education />
         <GeneralPreview info={this.state}/>
       </div>
     )

@@ -1,4 +1,5 @@
 import React from "react";
+import ExperiencePreview from "./ExperiencePreview";
 
 class Experience extends React.Component {
     constructor(props) {
@@ -31,30 +32,33 @@ class Experience extends React.Component {
     }
 
     render() {
-    return (
-        <form onSubmit={this.handleSubmit}>
-        <label>
-            Company:
-            <input name="company" type="text" value={this.state.company} onChange={this.handleChange} />
-        </label>
-        <label>
-            Position:
-            <input name="position" type="text" value={this.state.email} onChange={this.handleChange} />
-        </label>
-        <label>
-            Tasks:
-            <input name="tasks" type="text" value={this.state.phone} onChange={this.handleChange} />
-        </label>
-        <label>
-            Start Date:
-            <input name="start" type="date" value={this.state.start} onChange={this.handleChange} />
-        </label><label>
-            End Date:
-            <input name="end" type="date" value={this.state.end} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-        </form>
-    )
+        return (
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                <label>
+                    Company:
+                    <input name="company" type="text" value={this.state.company} onChange={this.handleChange} />
+                </label>
+                <label>
+                    Position:
+                    <input name="position" type="text" value={this.state.email} onChange={this.handleChange} />
+                </label>
+                <label>
+                    Tasks:
+                    <input name="tasks" type="text" value={this.state.phone} onChange={this.handleChange} />
+                </label>
+                <label>
+                    Start Date:
+                    <input name="start" type="date" value={this.state.start} onChange={this.handleChange} />
+                </label><label>
+                    End Date:
+                    <input name="end" type="date" value={this.state.end} onChange={this.handleChange} />
+                </label>
+                <input type="submit" value="Submit" />
+                </form>
+                <ExperiencePreview info={this.state}/>
+            </div>
+        )
     }
 }
 
