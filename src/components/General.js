@@ -29,7 +29,6 @@ class General extends React.Component {
             Phone Number:
             <input name="phone" type="tel" defaultValue={this.props.general.phone} onChange={this.props.handleChange} />
           </label>
-          <input type="submit" value="Submit" />
         </form>
       </div>
     )
