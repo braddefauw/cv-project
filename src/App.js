@@ -22,7 +22,7 @@ class App extends React.Component {
       experience: {
         company: '',
         position: '',
-        tasks: '',
+        Location: '',
         start: '',
         end: ''
       },
@@ -34,7 +34,6 @@ class App extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
@@ -46,21 +45,16 @@ class App extends React.Component {
       {[name]: value}
     );
   }
-
-  handleSubmit(event) {
-    alert(`Name: ${this.state.firstName}, Email: ${this.state.email}, Phone: ${this.state.phone}`);
-    event.preventDefault();
-  }
   
   render(){
     return(
       <div>
         <General general={this.state.general} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-        <Experience experience={this.state.experience} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
         <Education education={this.state.education} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
+        <Experience experience={this.state.experience} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
         <GeneralPreview info={this.state}/>
-        <ExperiencePreview info={this.state} />
         <EducationPreview info={this.state} />
+        <ExperiencePreview info={this.state} />
       </div>
     )
   }

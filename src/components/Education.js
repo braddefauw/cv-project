@@ -4,7 +4,7 @@ class Education extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form>
                     <label>
                         School:
                         <input name="school" type="text" defaultValue={this.props.education.school} onChange={this.props.handleChange} />

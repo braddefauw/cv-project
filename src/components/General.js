@@ -4,7 +4,7 @@ class General extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.props.handleSubmit}>
+        <form>
           <label>
             First Name:
             <input name="firstName" type="text" defaultValue={this.props.general.firstName} onChange={this.props.handleChange} />
