@@ -5,6 +5,7 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import GeneralPreview from './components/GeneralPreview';
 import ExperiencePreview from './components/ExperiencePreview';
+import EducationPreview from './components/EducationPreview';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,9 +26,11 @@ class App extends React.Component {
         start: '',
         end: ''
       },
-      school: '',
-      major: '',
-      gradYear: '',
+      education: {
+        school: '',
+        major: '',
+        gradYear: '',
+      }
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -54,9 +57,10 @@ class App extends React.Component {
       <div>
         <General general={this.state.general} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
         <Experience experience={this.state.experience} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-        <Education />
+        <Education education={this.state.education} handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
         <GeneralPreview info={this.state}/>
         <ExperiencePreview info={this.state} />
+        <EducationPreview info={this.state} />
       </div>
     )
   }

@@ -4,7 +4,11 @@ class EducationPreview extends React.Component {
     render(){
         return(
             <div>
-                <h1>School: {this.props.info.school}</h1>
+                <ul>
+                    <li>School: {this.props.info.school}</li>
+                    <li>Major: {this.props.info.major}</li>
+                    <li>Graduation Year: {this.props.info.gradYear}</li>
+                </ul>
             </div>
         )
     }

@@ -1,50 +1,23 @@
 import React from "react";
 
 class Education extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          school: '',
-          major: '',
-          gradYear: '',
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handleChange(event) {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-    
-    this.setState(
-        {[name]: value}
-        );
-    }
-
-    handleSubmit(event) {
-    alert(`School: ${this.state.school}, Major: ${this.state.major}, Graduation: ${this.state.gradYear}`);
-    event.preventDefault();
-    }
-
     render() {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                 <label>
                     School:
-                    <input name="school" type="text" value={this.state.school} onChange={this.handleChange} />
+                    <input name="school" type="text" defaultValue={this.props.education.school} onChange={this.props.handleChange} />
                 </label>
                 <label>
                     Major:
-                    <input name="major" type="text" value={this.state.major} onChange={this.handleChange} />
+                    <input name="major" type="text" defaultValue={this.props.education.major} onChange={this.props.handleChange} />
                 </label>
                 <label>
                     Graduation Year:
-                    <input name="gradYear" type="num" value={this.state.gradYear} onChange={this.handleChange} />
+                    <input name="gradYear" type="num" defaultValue={this.props.education.gradYear} onChange={this.props.handleChange} />
                 </label>
-                <input type="submit" value="Submit" />
+                <input type="submit" defaultValue="Submit" />
                 </form>
             </div>
         )
