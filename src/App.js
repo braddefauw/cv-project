@@ -7,14 +7,6 @@ import GeneralPreview from './components/GeneralPreview';
 import ExperiencePreview from './components/ExperiencePreview';
 import EducationPreview from './components/EducationPreview';
 
-class Input extends React.Component {
-  render() {
-      return (
-          <input placeholder="Your input here" />
-      );
-  }
-}
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -60,7 +52,7 @@ class App extends React.Component {
     event.preventDefault();
     const inputList = this.state.inputList;
       this.setState({
-          inputList: inputList.concat(<Input key={inputList.length} />)
+          inputList: inputList.concat(<Education key={inputList.length} education={this.state.education} handleChange={this.handleChange} handleAdd={this.handleAdd} inputList={this.state.inputList}/>)
       });
   }
   
@@ -69,6 +61,9 @@ class App extends React.Component {
       <div>
         <General general={this.state.general} handleChange={this.handleChange}/>
         <Education education={this.state.education} handleChange={this.handleChange} handleAdd={this.handleAdd} inputList={this.state.inputList}/>
+        {this.state.inputList.map(function(input, index) {
+          return input
+        })}
         <Experience experience={this.state.experience} handleChange={this.handleChange}/>
         <GeneralPreview info={this.state}/>
         <EducationPreview info={this.state} />
