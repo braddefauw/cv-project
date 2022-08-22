@@ -16,7 +16,7 @@ class Education extends React.Component {
                     Graduation Year:
                     <input name="gradYear" type="num" defaultValue={this.props.education.gradYear} onChange={this.props.handleChange} />
                 </label>
-                <button onClick={this.props.handleAdd}>Add Education</button>
+                <button onClick={this.props.handleAddEd}>Add Education</button>
             </div>
         )
     }

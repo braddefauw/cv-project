@@ -26,16 +26,16 @@ class App extends React.Component {
         start: '',
         end: ''
       },
-      education: {
+      education: [{
         school: '',
         major: '',
         gradYear: '',
-      },
+      }],
       inputList: [],
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleAdd = this.handleAdd.bind(this);
+    this.handleAddEd = this.handleAddEd.bind(this);
   }
 
   handleChange(event) {
@@ -48,25 +48,30 @@ class App extends React.Component {
     );
   }
 
-  handleAdd(event) {
+  handleAddEd(event) {
     event.preventDefault();
     const inputList = this.state.inputList;
+    const education = this.state.education;
       this.setState({
-          inputList: inputList.concat(<Education key={inputList.length} education={this.state.education} handleChange={this.handleChange} handleAdd={this.handleAdd} inputList={this.state.inputList}/>)
+          inputList: inputList.concat(<Education key={inputList.length} education={this.state.education} handleChange={this.handleChange} handleAddEd={this.handleAddEd} inputList={this.state.inputList}/>),
+          education: education.concat({school: '',
+          major: '',
+          gradYear: ''})
       });
+      console.log(this.state);
   }
   
   render(){
     return(
       <div>
         <General general={this.state.general} handleChange={this.handleChange}/>
-        <Education education={this.state.education} handleChange={this.handleChange} handleAdd={this.handleAdd} inputList={this.state.inputList}/>
+        <Education key={this.state.inputList.length} education={this.state.education} handleChange={this.handleChange} handleAddEd={this.handleAddEd} inputList={this.state.inputList}/>
         {this.state.inputList.map(function(input, index) {
           return input
         })}
         <Experience experience={this.state.experience} handleChange={this.handleChange}/>
         <GeneralPreview info={this.state}/>
-        <EducationPreview info={this.state} />
+        <EducationPreview info={this.state} inputList={this.state.inputList}/>
         <ExperiencePreview info={this.state} />
       </div>
     )
