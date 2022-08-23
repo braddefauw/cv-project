@@ -2,8 +2,9 @@ import React from "react";
 
 class Education extends React.Component {
     render() {
+        let id = this.props.id;
         return (
-            <div className="education">
+            <div id={id} className="education">
                 <label>
                     School:
                     <input name="school" type="text" defaultValue={this.props.education.school} onChange={this.props.handleChange} />

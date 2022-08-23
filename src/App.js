@@ -8,7 +8,7 @@ import ExperiencePreview from './components/ExperiencePreview';
 import EducationPreview from './components/EducationPreview';
 
 class App extends React.Component {
-
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -44,7 +44,7 @@ class App extends React.Component {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-    const id = this.state.education[0].id;
+    // const id = this.state.education[0].id;
     
     //create id's for each object in education array
     //access those id's in set state
@@ -55,35 +55,39 @@ class App extends React.Component {
         }]
       }
     );
+    console.log(this.state.education)
   }
 
   handleAddEd(event) {
     event.preventDefault();
     const inputList = this.state.inputList;
     const education = this.state.education;
-    const id = this.state.education.length;
+    let index = this.state.education.length;
       this.setState({
           inputList: inputList.concat(
           <Education 
-          key={inputList.length}  
+          key={inputList.length}
+          id={index}  
           education={this.state.education} 
           handleChange={this.handleChange} 
           handleAddEd={this.handleAddEd} 
           inputList={this.state.inputList}/>
           ),
           education: education.concat({
-          id: id,  
+          id: index,  
           school: '',
           major: '',
           gradYear: ''})
       });
+      index++;
+      console.log(index);
   }
   
   render(){
     return(
       <div>
         <General general={this.state.general} handleChange={this.handleChange}/>
-        <Education key={this.state.inputList.length} education={this.state.education} handleChange={this.handleChange} handleAddEd={this.handleAddEd} inputList={this.state.inputList}/>
+        <Education key={this.state.inputList.length} id={this.state.education[0].id} education={this.state.education} handleChange={this.handleChange} handleAddEd={this.handleAddEd} inputList={this.state.inputList}/>
         {this.state.inputList.map(function(input, index) {
           return input
         })}
