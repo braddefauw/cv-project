@@ -46,17 +46,24 @@ class App extends React.Component {
     const name = target.name;
     const id = event.target.parentElement.parentElement.id;
     // console.log(id);
+
+    let edItems = [{...this.state.education}];
+    let edItem = {...edItems[id]};
+    console.log(edItems,edItem, id);
+    edItem[id][[name]]= value;
+    edItems[id] = edItem;
+    this.setState({edItems});
+    // console.log(this.state.education[id]);
     
-    //create id's for each object in education array
+    //create id's for each object in education array -- DONE
     //access those id's in set state
-    this.setState(
-      {
-        education: [...this.state.education, {
-          [name]: value
-        }]
-      }
-    );
-    console.log(this.state.education)
+    // this.setState({
+    //     education: {
+    //       ...this.state.education,
+    //       [name]: value,
+    //     }
+    // });
+    // console.log(this.state.education)
   }
 
   handleAddEd(event) {
@@ -79,7 +86,7 @@ class App extends React.Component {
           school: '',
           major: '',
           gradYear: ''})
-      });
+      }, () => console.log(this.state.education));
       index++;
       // console.log(index);
   }

@@ -9,9 +9,9 @@ class EducationPreview extends React.Component {
             <div>
                 {info.map((item,i) => 
                 <ul key={i} id={this.props.educationId}>
-                    <li>School: {info[i].school}</li>
-                    <li>Major: {info.major}</li>
-                    <li>Graduation Year: {info.gradYear}</li>
+                    <li>School: {item.school}</li>
+                    <li>Major: {item.major}</li>
+                    <li>Graduation Year: {item.gradYear}</li>
                 </ul>
                 )}
             </div>
