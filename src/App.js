@@ -8,6 +8,7 @@ import ExperiencePreview from './components/ExperiencePreview';
 import EducationPreview from './components/EducationPreview';
 
 class App extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -27,6 +28,7 @@ class App extends React.Component {
         end: ''
       },
       education: [{
+        id: 0,
         school: '',
         major: '',
         gradYear: '',
@@ -42,10 +44,13 @@ class App extends React.Component {
     const target = event.target;
     const value = target.value;
     const name = target.name;
+    const id = this.state.education[0].id;
     
+    //create id's for each object in education array
+    //access those id's in set state
     this.setState(
       {
-        education: [{
+        education: [...this.state.education, {
           [name]: value
         }]
       }
@@ -56,13 +61,22 @@ class App extends React.Component {
     event.preventDefault();
     const inputList = this.state.inputList;
     const education = this.state.education;
+    const id = this.state.education.length;
       this.setState({
-          inputList: inputList.concat(<Education key={inputList.length} education={this.state.education} handleChange={this.handleChange} handleAddEd={this.handleAddEd} inputList={this.state.inputList}/>),
-          education: education.concat({school: '',
+          inputList: inputList.concat(
+          <Education 
+          key={inputList.length}  
+          education={this.state.education} 
+          handleChange={this.handleChange} 
+          handleAddEd={this.handleAddEd} 
+          inputList={this.state.inputList}/>
+          ),
+          education: education.concat({
+          id: id,  
+          school: '',
           major: '',
           gradYear: ''})
       });
-      console.log(this.state);
   }
   
   render(){
