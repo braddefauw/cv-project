@@ -44,7 +44,8 @@ class App extends React.Component {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-    // const id = this.state.education[0].id;
+    const id = event.target.parentElement.parentElement.id;
+    // console.log(id);
     
     //create id's for each object in education array
     //access those id's in set state
@@ -80,7 +81,7 @@ class App extends React.Component {
           gradYear: ''})
       });
       index++;
-      console.log(index);
+      // console.log(index);
   }
   
   render(){
