@@ -7,15 +7,15 @@ class Education extends React.Component {
             <div id={id} className="education">
                 <label>
                     School:
-                    <input name="school" type="text" defaultValue={this.props.education.school} onChange={this.props.handleChange} />
+                    <input name="school" type="text" defaultValue={this.props.education.school} onChange={this.props.handleChangeEd} />
                 </label>
                 <label>
                     Major:
-                    <input name="major" type="text" defaultValue={this.props.education.major} onChange={this.props.handleChange} />
+                    <input name="major" type="text" defaultValue={this.props.education.major} onChange={this.props.handleChangeEd} />
                 </label>
                 <label>
                     Graduation Year:
-                    <input name="gradYear" type="num" defaultValue={this.props.education.gradYear} onChange={this.props.handleChange} />
+                    <input name="gradYear" type="num" defaultValue={this.props.education.gradYear} onChange={this.props.handleChangeEd} />
                 </label>
                 <button onClick={this.props.handleAddEd}>Add Education</button>
             </div>

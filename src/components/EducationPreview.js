@@ -3,7 +3,6 @@ import React from 'react';
 class EducationPreview extends React.Component {
     render(){
         const info = this.props.info.education;
-        // console.log(info);
         
         return(
             <div>

@@ -36,11 +36,11 @@ class App extends React.Component {
       inputList: [],
     };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeEd = this.handleChangeEd.bind(this);
     this.handleAddEd = this.handleAddEd.bind(this);
   }
 
-  handleChange(event) {
+  handleChangeEd(event) {
     const target = event.target;
     const value = target.value;
     const name = target.name;
@@ -69,7 +69,7 @@ class App extends React.Component {
           key={inputList.length}
           id={index}  
           education={this.state.education} 
-          handleChange={this.handleChange} 
+          handleChangeEd={this.handleChangeEd} 
           handleAddEd={this.handleAddEd} 
           inputList={this.state.inputList}/>
           ),
@@ -79,7 +79,7 @@ class App extends React.Component {
           major: '',
           gradYear: ''})
       }, () => console.log(this.state.education));
-      index++;
+      // index++;
       // console.log(index);
   }
   
@@ -87,7 +87,7 @@ class App extends React.Component {
     return(
       <div>
         <General general={this.state.general} handleChange={this.handleChange}/>
-        <Education key={this.state.inputList.length} id={this.state.education[0].id} education={this.state.education} handleChange={this.handleChange} handleAddEd={this.handleAddEd} inputList={this.state.inputList}/>
+        <Education key={this.state.inputList.length} id={this.state.education[0].id} education={this.state.education} handleChangeEd={this.handleChangeEd} handleAddEd={this.handleAddEd} inputList={this.state.inputList}/>
         {this.state.inputList.map(function(input, index) {
           return input
         })}
