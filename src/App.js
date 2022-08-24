@@ -12,14 +12,15 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      general: {
+      general: [{
+        id: 0,
         firstName: '',
         lastName: '',
         title: '',
         address: '',
         email: '',
         phone: ''
-      },
+      }],
       experience: {
         company: '',
         position: '',
@@ -36,8 +37,28 @@ class App extends React.Component {
       inputList: [],
     };
 
+    this.handleChangeGen = this.handleChangeGen.bind(this);
     this.handleChangeEd = this.handleChangeEd.bind(this);
     this.handleAddEd = this.handleAddEd.bind(this);
+  }
+
+  handleChangeGen(event){
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    const id = event.target.parentElement.parentElement.parentElement.id;
+    
+    //make a shallow copy of the items
+    let general = [...this.state.general];
+    //make a shallow copy of the item to mutate
+    let genItem = {...general[id]};
+    console.log(id, general, genItem)
+    //replace the property that's being changed
+    genItem[[name]] = value;
+    //put back into array
+    general[id] = genItem;
+    //set the state to our new copy
+    this.setState({general});
   }
 
   handleChangeEd(event) {
@@ -86,7 +107,7 @@ class App extends React.Component {
   render(){
     return(
       <div>
-        <General general={this.state.general} handleChange={this.handleChange}/>
+        <General general={this.state.general} id={this.state.general[0].id} handleChangeGen={this.handleChangeGen}/>
         <Education key={this.state.inputList.length} id={this.state.education[0].id} education={this.state.education} handleChangeEd={this.handleChangeEd} handleAddEd={this.handleAddEd} inputList={this.state.inputList}/>
         {this.state.inputList.map(function(input, index) {
           return input
