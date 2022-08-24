@@ -3,11 +3,12 @@ import React from "react";
 class Education extends React.Component {
     render() {
         let id = this.props.id;
+        console.log(this.props.education);
         return (
             <div id={id} className="education">
                 <label>
                     School:
-                    <input name="school" type="text" defaultValue={this.props.education.school} onChange={this.props.handleChangeEd} />
+                    <input name="school" type="text" defaultValue={this.props.defaultValue} onChange={this.props.handleChangeEd} />
                 </label>
                 <label>
                     Major:

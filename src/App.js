@@ -85,7 +85,12 @@ class App extends React.Component {
     const education = this.state.education;
     let index = this.state.education.length;
       this.setState({
-          inputList: inputList.concat(
+        education: education.concat({
+          id: index,  
+          school: '',
+          major: '',
+          gradYear: ''}),  
+        inputList: inputList.concat(
           <Education 
           key={inputList.length}
           id={index}  
@@ -93,12 +98,7 @@ class App extends React.Component {
           handleChangeEd={this.handleChangeEd} 
           handleAddEd={this.handleAddEd} 
           inputList={this.state.inputList}/>
-          ),
-          education: education.concat({
-          id: index,  
-          school: '',
-          major: '',
-          gradYear: ''})
+        ),
       }, () => console.log(this.state.education));
       // index++;
       // console.log(index);
@@ -108,7 +108,15 @@ class App extends React.Component {
     return(
       <div>
         <General general={this.state.general} id={this.state.general[0].id} handleChangeGen={this.handleChangeGen}/>
-        <Education key={this.state.inputList.length} id={this.state.education[0].id} education={this.state.education} handleChangeEd={this.handleChangeEd} handleAddEd={this.handleAddEd} inputList={this.state.inputList}/>
+        <Education 
+        key={this.state.inputList.length} 
+        id={this.state.education[0].id} 
+        education={this.state.education} 
+        handleChangeEd={this.handleChangeEd} 
+        handleAddEd={this.handleAddEd} 
+        inputList={this.state.inputList}
+        defaultValue={this.state.education[0].school}
+        />
         {this.state.inputList.map(function(input, index) {
           return input
         })}
