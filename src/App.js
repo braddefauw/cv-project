@@ -115,7 +115,9 @@ class App extends React.Component {
         handleChangeEd={this.handleChangeEd} 
         handleAddEd={this.handleAddEd} 
         inputList={this.state.inputList}
-        defaultValue={this.state.education[0].school}
+        defaultSchool={this.state.education[0].school}
+        defaultMajor={this.state.education[0].major}
+        defaultGrad={this.state.education[0].gradYear}
         />
         {this.state.inputList.map(function(input, index) {
           return input
