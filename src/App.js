@@ -45,25 +45,17 @@ class App extends React.Component {
     const value = target.value;
     const name = target.name;
     const id = event.target.parentElement.parentElement.id;
-    // console.log(id);
 
-    let edItems = [{...this.state.education}];
-    let edItem = {...edItems[id]};
-    console.log(edItems,edItem, id);
-    edItem[id][[name]]= value;
-    edItems[id] = edItem;
-    this.setState({edItems});
-    // console.log(this.state.education[id]);
-    
-    //create id's for each object in education array -- DONE
-    //access those id's in set state
-    // this.setState({
-    //     education: {
-    //       ...this.state.education,
-    //       [name]: value,
-    //     }
-    // });
-    // console.log(this.state.education)
+    //make a shallow copy of the items
+    let education = [...this.state.education];
+    //make a shallow copy of the item to mutate
+    let edItem = {...education[id]};
+    //replace the property that's being changed
+    edItem[[name]] = value;
+    //put back into array
+    education[id] = edItem;
+    //set the state to our new copy
+    this.setState({education});
   }
 
   handleAddEd(event) {
