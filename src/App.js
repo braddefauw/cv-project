@@ -25,7 +25,7 @@ class App extends React.Component {
         id: 0,
         company: '',
         position: '',
-        Location: '',
+        location: '',
         start: '',
         end: ''
       }],
@@ -36,12 +36,14 @@ class App extends React.Component {
         gradYear: '',
       }],
       edList: [],
+      exList: [],
     };
 
     this.handleChangeGen = this.handleChangeGen.bind(this);
     this.handleChangeEd = this.handleChangeEd.bind(this);
     this.handleChangeEx = this.handleChangeEx.bind(this);
     this.handleAddEd = this.handleAddEd.bind(this);
+    this.handleAddEx = this.handleAddEx.bind(this)
   }
 
   handleChangeGen(event){
@@ -85,7 +87,6 @@ class App extends React.Component {
     const value = target.value;
     const name = target.name;
     const id = event.target.parentElement.parentElement.id;
-    console.log(target, value, name, id);
     
     //make a shallow copy of the items
     let experience = [...this.state.experience];
@@ -126,6 +127,37 @@ class App extends React.Component {
       // index++;
       // console.log(index);
   }
+
+  handleAddEx(event) {
+    event.preventDefault();
+    const exList = this.state.exList;
+    const experience = this.state.experience;
+    let index = this.state.experience.length;
+      this.setState({
+        experience: experience.concat({
+          id: index,
+          company: '',
+          position: '',
+          Location: '',
+          start: '',
+          end: ''
+        }),  
+        exList: exList.concat(
+          <Experience 
+          key={exList.length}
+          id={index}  
+          experience={this.state.experience} 
+          handleChangeEx={this.handleChangeEx} 
+          handleAddEx={this.handleAddEx} 
+          exList={this.state.exList}/>
+        ),
+      }
+      // , () => 
+      // console.log(this.state.experience)
+      );
+      // index++;
+      // console.log(index);
+  }
   
   render(){
     return(
@@ -153,9 +185,14 @@ class App extends React.Component {
         experience={this.state.experience} 
         id={this.state.experience[0].id} 
         handleChangeEx={this.handleChangeEx}
+        handleAddEx={this.handleAddEx} 
+        exList={this.state.exList}
         />
+        {this.state.exList.map(function(input, index) {
+          return input
+        })}
         <GeneralPreview info={this.state}/>
-        <EducationPreview info={this.state} edList={this.state.edList}/>
+        <EducationPreview info={this.state}/>
         <ExperiencePreview info={this.state} />
       </div>
     )

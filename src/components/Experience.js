@@ -24,6 +24,7 @@ class Experience extends React.Component {
                     End Date (Year):
                     <input name="end" type="text" defaultValue={this.props.experience.end} onChange={this.props.handleChangeEx} />
                 </label>
+                <button onClick={this.props.handleAddEx}>Add Experience</button>
             </div>
         )
     }

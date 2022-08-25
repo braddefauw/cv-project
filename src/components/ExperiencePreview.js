@@ -3,7 +3,6 @@ import React from 'react';
 class ExperiencePreview extends React.Component {
     render(){
         const info = this.props.info.experience;
-        console.log(info);
         return(
             <div>
                 {info.map((item,i) => 
