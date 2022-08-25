@@ -21,13 +21,14 @@ class App extends React.Component {
         email: '',
         phone: ''
       }],
-      experience: {
+      experience: [{
+        id: 0,
         company: '',
         position: '',
         Location: '',
         start: '',
         end: ''
-      },
+      }],
       education: [{
         id: 0,
         school: '',
@@ -39,6 +40,7 @@ class App extends React.Component {
 
     this.handleChangeGen = this.handleChangeGen.bind(this);
     this.handleChangeEd = this.handleChangeEd.bind(this);
+    this.handleChangeEx = this.handleChangeEx.bind(this);
     this.handleAddEd = this.handleAddEd.bind(this);
   }
 
@@ -78,6 +80,25 @@ class App extends React.Component {
     this.setState({education});
   }
 
+  handleChangeEx(event){
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    const id = event.target.parentElement.parentElement.id;
+    console.log(target, value, name, id);
+    
+    //make a shallow copy of the items
+    let experience = [...this.state.experience];
+    //make a shallow copy of the item to mutate
+    let exItem = {...experience[id]};
+    //replace the property that's being changed
+    exItem[[name]] = value;
+    //put back into array
+    experience[id] = exItem;
+    //set the state to our new copy
+    this.setState({experience});
+  }
+
   handleAddEd(event) {
     event.preventDefault();
     const edList = this.state.edList;
@@ -109,7 +130,11 @@ class App extends React.Component {
   render(){
     return(
       <div>
-        <General general={this.state.general} id={this.state.general[0].id} handleChangeGen={this.handleChangeGen}/>
+        <General 
+        general={this.state.general} 
+        id={this.state.general[0].id} 
+        handleChangeGen={this.handleChangeGen}
+        />
         <Education 
         key={this.state.edList.length} 
         id={this.state.education[0].id} 
@@ -124,7 +149,11 @@ class App extends React.Component {
         {this.state.edList.map(function(input, index) {
           return input
         })}
-        <Experience experience={this.state.experience} handleChange={this.handleChange}/>
+        <Experience 
+        experience={this.state.experience} 
+        id={this.state.experience[0].id} 
+        handleChangeEx={this.handleChangeEx}
+        />
         <GeneralPreview info={this.state}/>
         <EducationPreview info={this.state} edList={this.state.edList}/>
         <ExperiencePreview info={this.state} />
