@@ -34,7 +34,7 @@ class App extends React.Component {
         major: '',
         gradYear: '',
       }],
-      inputList: [],
+      edList: [],
     };
 
     this.handleChangeGen = this.handleChangeGen.bind(this);
@@ -52,7 +52,6 @@ class App extends React.Component {
     let general = [...this.state.general];
     //make a shallow copy of the item to mutate
     let genItem = {...general[id]};
-    console.log(id, general, genItem)
     //replace the property that's being changed
     genItem[[name]] = value;
     //put back into array
@@ -81,7 +80,7 @@ class App extends React.Component {
 
   handleAddEd(event) {
     event.preventDefault();
-    const inputList = this.state.inputList;
+    const edList = this.state.edList;
     const education = this.state.education;
     let index = this.state.education.length;
       this.setState({
@@ -90,16 +89,19 @@ class App extends React.Component {
           school: '',
           major: '',
           gradYear: ''}),  
-        inputList: inputList.concat(
+        edList: edList.concat(
           <Education 
-          key={inputList.length}
+          key={edList.length}
           id={index}  
           education={this.state.education} 
           handleChangeEd={this.handleChangeEd} 
           handleAddEd={this.handleAddEd} 
-          inputList={this.state.inputList}/>
+          edList={this.state.edList}/>
         ),
-      }, () => console.log(this.state.education));
+      }
+      // , () => 
+      // console.log(this.state.education)
+      );
       // index++;
       // console.log(index);
   }
@@ -109,22 +111,22 @@ class App extends React.Component {
       <div>
         <General general={this.state.general} id={this.state.general[0].id} handleChangeGen={this.handleChangeGen}/>
         <Education 
-        key={this.state.inputList.length} 
+        key={this.state.edList.length} 
         id={this.state.education[0].id} 
         education={this.state.education} 
         handleChangeEd={this.handleChangeEd} 
         handleAddEd={this.handleAddEd} 
-        inputList={this.state.inputList}
+        edList={this.state.edList}
         defaultSchool={this.state.education[0].school}
         defaultMajor={this.state.education[0].major}
         defaultGrad={this.state.education[0].gradYear}
         />
-        {this.state.inputList.map(function(input, index) {
+        {this.state.edList.map(function(input, index) {
           return input
         })}
         <Experience experience={this.state.experience} handleChange={this.handleChange}/>
         <GeneralPreview info={this.state}/>
-        <EducationPreview info={this.state} inputList={this.state.inputList}/>
+        <EducationPreview info={this.state} edList={this.state.edList}/>
         <ExperiencePreview info={this.state} />
       </div>
     )
