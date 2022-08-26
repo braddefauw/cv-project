@@ -1,3 +1,20 @@
-body {
+html {
     background: lightblue;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+}
+
+.title {
+    background: black;
+    color: lightgray;
+}
+
+.title h1 {
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
 }

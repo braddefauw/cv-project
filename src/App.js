@@ -163,6 +163,9 @@ class App extends React.Component {
   render(){
     return(
       <div>
+        <div className='title'>
+          <h1>CV Creator</h1>
+        </div>
         <General 
         general={this.state.general} 
         id={this.state.general[0].id} 
