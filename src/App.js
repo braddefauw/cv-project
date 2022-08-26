@@ -6,6 +6,7 @@ import Education from './components/Education';
 import GeneralPreview from './components/GeneralPreview';
 import ExperiencePreview from './components/ExperiencePreview';
 import EducationPreview from './components/EducationPreview';
+import "./styles/main.css";
 
 class App extends React.Component {
   
