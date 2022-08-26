@@ -166,38 +166,42 @@ class App extends React.Component {
         <div className='title'>
           <h1>CV Creator</h1>
         </div>
-        <General 
-        general={this.state.general} 
-        id={this.state.general[0].id} 
-        handleChangeGen={this.handleChangeGen}
-        />
-        <Education 
-        key={this.state.edList.length} 
-        id={this.state.education[0].id} 
-        education={this.state.education} 
-        handleChangeEd={this.handleChangeEd} 
-        handleAddEd={this.handleAddEd} 
-        edList={this.state.edList}
-        defaultSchool={this.state.education[0].school}
-        defaultMajor={this.state.education[0].major}
-        defaultGrad={this.state.education[0].gradYear}
-        />
-        {this.state.edList.map(function(input, index) {
-          return input
-        })}
-        <Experience 
-        experience={this.state.experience} 
-        id={this.state.experience[0].id} 
-        handleChangeEx={this.handleChangeEx}
-        handleAddEx={this.handleAddEx} 
-        exList={this.state.exList}
-        />
-        {this.state.exList.map(function(input, index) {
-          return input
-        })}
-        <GeneralPreview info={this.state}/>
-        <EducationPreview info={this.state}/>
-        <ExperiencePreview info={this.state} />
+        <div className='inputs'>
+          <General 
+          general={this.state.general} 
+          id={this.state.general[0].id} 
+          handleChangeGen={this.handleChangeGen}
+          />
+          <Education 
+          key={this.state.edList.length} 
+          id={this.state.education[0].id} 
+          education={this.state.education} 
+          handleChangeEd={this.handleChangeEd} 
+          handleAddEd={this.handleAddEd} 
+          edList={this.state.edList}
+          defaultSchool={this.state.education[0].school}
+          defaultMajor={this.state.education[0].major}
+          defaultGrad={this.state.education[0].gradYear}
+          />
+          {this.state.edList.map(function(input, index) {
+            return input
+          })}
+          <Experience 
+          experience={this.state.experience} 
+          id={this.state.experience[0].id} 
+          handleChangeEx={this.handleChangeEx}
+          handleAddEx={this.handleAddEx} 
+          exList={this.state.exList}
+          />
+          {this.state.exList.map(function(input, index) {
+            return input
+          })}
+        </div>
+        <div className='preview'>
+          <GeneralPreview info={this.state}/>
+          <EducationPreview info={this.state}/>
+          <ExperiencePreview info={this.state} />
+        </div>
       </div>
     )
   }

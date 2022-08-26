@@ -6,17 +6,17 @@ class Education extends React.Component {
         return (
             <div id={id} className="education">
                 <label>
-                    School:
-                    <input name="school" type="text" defaultValue={this.props.defaultSchool} onChange={this.props.handleChangeEd} />
+                    <input placeholder="School" name="school" type="text" defaultValue={this.props.defaultSchool} onChange={this.props.handleChangeEd} />
                 </label>
+                <br></br>
                 <label>
-                    Major:
-                    <input name="major" type="text" defaultValue={this.props.defaultMajor} onChange={this.props.handleChangeEd} />
+                    <input placeholder="Major" name="major" type="text" defaultValue={this.props.defaultMajor} onChange={this.props.handleChangeEd} />
                 </label>
+                <br></br>
                 <label>
-                    Graduation Year:
-                    <input name="gradYear" type="num" defaultValue={this.props.defaultGrad} onChange={this.props.handleChangeEd} />
+                    <input placeholder="Graduation Year" name="gradYear" type="num" defaultValue={this.props.defaultGrad} onChange={this.props.handleChangeEd} />
                 </label>
+                <br></br>
                 <button onClick={this.props.handleAddEd}>Add Education</button>
             </div>
         )
