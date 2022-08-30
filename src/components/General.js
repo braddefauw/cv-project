@@ -6,6 +6,7 @@ class General extends React.Component {
 
     return (
       <div id={id}>
+        <h3>General Information</h3>
         <form>
           <label>
             <input className="input" placeholder="First Name" name="firstName" type="text" defaultValue={this.props.general.firstName} onChange={this.props.handleChangeGen} />

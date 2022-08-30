@@ -5,6 +5,7 @@ class Education extends React.Component {
         let id = this.props.id;
         return (
             <div id={id} className="education">
+                <h3>Education</h3>
                 <label>
                     <input className="input" placeholder="School" name="school" type="text" defaultValue={this.props.defaultSchool} onChange={this.props.handleChangeEd} />
                 </label>

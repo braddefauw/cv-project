@@ -5,6 +5,7 @@ class Experience extends React.Component {
         let id = this.props.id;
         return (
             <div id={id}>
+                <h3>Experience</h3>
                 <label>
                     <input className="input" placeholder="Company" name="company" type="text" defaultValue={this.props.experience.company} onChange={this.props.handleChangeEx} />
                 </label>
