@@ -41,3 +41,7 @@ body {
     border-radius: 0.25rem;
 }
 
+.input:focus {
+    outline: 1px solid gray;
+}
+
