@@ -1,5 +1,5 @@
 html {
-    background: lightgray;
+    background: silver;
     margin: 0;
     padding: 0;
 }
@@ -27,11 +27,13 @@ body {
 
 .inputs {
     width: 80%;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     margin: 1rem 0 1rem 0;
     padding-bottom: 1rem;
+    background: gainsboro;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 15px 2px dimgray;
 }
 
 .inputs h3 {
