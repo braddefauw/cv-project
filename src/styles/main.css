@@ -26,7 +26,7 @@ body {
 }
 
 .inputs {
-    width: 80%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     margin: 1rem 0 1rem 0;
@@ -50,5 +50,20 @@ body {
 
 .input:focus {
     outline: 1px solid gray;
+}
+
+.btn {
+    cursor: pointer;
+    background: darkgray;
+}
+
+.btn:hover {
+    background-color: gray;
+}
+
+.btn:active {
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    transform: translateY(4px);
+    /* Moving button 4px to y-axis */
 }
 
