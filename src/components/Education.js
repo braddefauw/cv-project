@@ -10,11 +10,23 @@ class Education extends React.Component {
                 </label>
                 <br></br>
                 <label>
-                    <input className="input" placeholder="Major" name="major" type="text" defaultValue={this.props.defaultMajor} onChange={this.props.handleChangeEd} />
+                    <input className="input" placeholder="Location (City, State)" name="location" type="text" defaultValue={this.props.defaultLocation} onChange={this.props.handleChangeEd} />
                 </label>
                 <br></br>
                 <label>
-                    <input className="input" placeholder="Graduation Year" name="gradYear" type="num" defaultValue={this.props.defaultGrad} onChange={this.props.handleChangeEd} />
+                    <input className="input" placeholder="Degree" name="degree" type="text" defaultValue={this.props.defaultDegree} onChange={this.props.handleChangeEd} />
+                </label>
+                <br></br>
+                <label>
+                    <input className="input" placeholder="Subject" name="subject" type="text" defaultValue={this.props.defaultSubject} onChange={this.props.handleChangeEd} />
+                </label>
+                <br></br>
+                <label>
+                    <input className="input" placeholder="From" name="from" type="num" defaultValue={this.props.defaultFrom} onChange={this.props.handleChangeEd} />
+                </label>
+                <br></br>
+                <label>
+                    <input className="input" placeholder="To" name="to" type="num" defaultValue={this.props.defaultTo} onChange={this.props.handleChangeEd} />
                 </label>
                 <br></br>
                 <button className="btn" onClick={this.props.handleAddEd}>Add</button>

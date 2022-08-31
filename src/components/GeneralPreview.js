@@ -9,6 +9,7 @@ class GeneralPreview extends React.Component {
                 <div key={i}>
                     <h1 className="name">{item.title} {item.firstName} {item.lastName}</h1>
                     <h4 className="general-info">{item.address} ● {item.email} ● {item.phone}</h4>
+                    <br></br><br></br>
                 </div>
                 )}
             </div>

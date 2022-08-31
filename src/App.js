@@ -33,8 +33,11 @@ class App extends React.Component {
       education: [{
         id: 0,
         school: '',
-        major: '',
-        gradYear: '',
+        location: '',
+        degree: '',
+        subject: '',
+        from: '',
+        to: '',
       }],
       edList: [],
       exList: [],
@@ -112,8 +115,12 @@ class App extends React.Component {
         education: education.concat({
           id: index,  
           school: '',
-          major: '',
-          gradYear: ''}),  
+          location: '',
+          degree: '',
+          subject: '',
+          from: '',
+          to: '',
+        }),  
         edList: edList.concat(
           <Education 
           key={edList.length}
@@ -146,7 +153,7 @@ class App extends React.Component {
           id: index,
           company: '',
           position: '',
-          Location: '',
+          location: '',
           start: '',
           end: ''
         }),  
@@ -195,8 +202,11 @@ class App extends React.Component {
             handleDeleteEd={this.handleDeleteEd} 
             edList={this.state.edList}
             defaultSchool={this.state.education[0].school}
-            defaultMajor={this.state.education[0].major}
-            defaultGrad={this.state.education[0].gradYear}
+            defaultDegree={this.state.education[0].degree}
+            defaultSubject={this.state.education[0].subject}
+            defaultLocation={this.state.education[0].location}
+            defaultFrom={this.state.education[0].from}
+            defaultGrad={this.state.education[0].to}
             />
             {this.state.edList.map(function(input, index) {
               return input
