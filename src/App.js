@@ -199,10 +199,12 @@ class App extends React.Component {
             })}
           </div>
         </div>
-        <div className='preview'>
-          <GeneralPreview info={this.state}/>
-          <EducationPreview info={this.state}/>
-          <ExperiencePreview info={this.state} />
+        <div className="preview-holder">
+          <div className='preview'>
+            <GeneralPreview info={this.state}/>
+            <EducationPreview info={this.state}/>
+            <ExperiencePreview info={this.state} />
+          </div>
         </div>
       </div>
     )

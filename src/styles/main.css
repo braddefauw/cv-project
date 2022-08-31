@@ -19,13 +19,13 @@ body {
     text-align: center;
 }
 
-.input-holder {
+.input-holder, .preview-holder {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.inputs {
+.inputs, .preview {
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -67,3 +67,9 @@ body {
     /* Moving button 4px to y-axis */
 }
 
+/* CV preview styling */
+
+.name, .general-info {
+    text-align: center;
+    margin: 0.5rem;
+}

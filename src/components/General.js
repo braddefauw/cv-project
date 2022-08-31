@@ -17,7 +17,7 @@ class General extends React.Component {
           </label>
           <br></br>
           <label>
-            <input className="input" placeholder="Title" name="title" type="text" defaultValue={this.props.general.title} onChange={this.props.handleChangeGen} />
+            <input className="input" placeholder="Title (Dr., Mr., Mrs., etc. - optional)" name="title" type="text" defaultValue={this.props.general.title} onChange={this.props.handleChangeGen} />
           </label>
           <br></br>
           <label>
