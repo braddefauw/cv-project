@@ -45,6 +45,8 @@ class App extends React.Component {
     this.handleChangeEx = this.handleChangeEx.bind(this);
     this.handleAddEd = this.handleAddEd.bind(this);
     this.handleAddEx = this.handleAddEx.bind(this)
+    this.handleDeleteEd = this.handleDeleteEd.bind(this);
+    this.handleDeleteEx = this.handleDeleteEx.bind(this);
   }
 
   handleChangeGen(event){
@@ -119,6 +121,7 @@ class App extends React.Component {
           education={this.state.education} 
           handleChangeEd={this.handleChangeEd} 
           handleAddEd={this.handleAddEd} 
+          handleDeleteEd={this.handleDeleteEd} 
           edList={this.state.edList}/>
         ),
       }
@@ -127,6 +130,10 @@ class App extends React.Component {
       );
       // index++;
       // console.log(index);
+  }
+
+  handleDeleteEd(event) {
+    console.log("test ed");
   }
 
   handleAddEx(event) {
@@ -150,6 +157,7 @@ class App extends React.Component {
           experience={this.state.experience} 
           handleChangeEx={this.handleChangeEx} 
           handleAddEx={this.handleAddEx} 
+          handleDeleteEx={this.handleDeleteEx} 
           exList={this.state.exList}/>
         ),
       }
@@ -158,6 +166,10 @@ class App extends React.Component {
       );
       // index++;
       // console.log(index);
+  }
+
+  handleDeleteEx(event) {
+    console.log("test ex");
   }
   
   render(){
@@ -173,12 +185,14 @@ class App extends React.Component {
             id={this.state.general[0].id} 
             handleChangeGen={this.handleChangeGen}
             />
+            <h3>Education</h3>
             <Education 
             key={this.state.edList.length} 
             id={this.state.education[0].id} 
             education={this.state.education} 
             handleChangeEd={this.handleChangeEd} 
-            handleAddEd={this.handleAddEd} 
+            handleAddEd={this.handleAddEd}
+            handleDeleteEd={this.handleDeleteEd} 
             edList={this.state.edList}
             defaultSchool={this.state.education[0].school}
             defaultMajor={this.state.education[0].major}
@@ -187,11 +201,13 @@ class App extends React.Component {
             {this.state.edList.map(function(input, index) {
               return input
             })}
+            <h3>Experience</h3>
             <Experience 
             experience={this.state.experience} 
             id={this.state.experience[0].id} 
             handleChangeEx={this.handleChangeEx}
-            handleAddEx={this.handleAddEx} 
+            handleAddEx={this.handleAddEx}
+            handleDeleteEx={this.handleDeleteEx} 
             exList={this.state.exList}
             />
             {this.state.exList.map(function(input, index) {

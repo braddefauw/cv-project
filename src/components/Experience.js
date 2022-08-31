@@ -5,7 +5,6 @@ class Experience extends React.Component {
         let id = this.props.id;
         return (
             <div id={id}>
-                <h3>Experience</h3>
                 <label>
                     <input className="input" placeholder="Company" name="company" type="text" defaultValue={this.props.experience.company} onChange={this.props.handleChangeEx} />
                 </label>
@@ -26,7 +25,8 @@ class Experience extends React.Component {
                     <input className="input" placeholder="End Date (Year)" name="end" type="text" defaultValue={this.props.experience.end} onChange={this.props.handleChangeEx} />
                 </label>
                 <br></br>
-                <button className="btn" onClick={this.props.handleAddEx}>Add Experience</button>
+                <button className="btn" onClick={this.props.handleAddEx}>Add</button>
+                <button className="btn" onClick={this.props.handleDeleteEx}>Delete</button>
             </div>
         )
     }
