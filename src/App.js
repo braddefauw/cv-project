@@ -206,7 +206,7 @@ class App extends React.Component {
             defaultSubject={this.state.education[0].subject}
             defaultLocation={this.state.education[0].location}
             defaultFrom={this.state.education[0].from}
-            defaultGrad={this.state.education[0].to}
+            defaultTo={this.state.education[0].to}
             />
             {this.state.edList.map(function(input, index) {
               return input
