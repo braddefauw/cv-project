@@ -6,7 +6,7 @@ class EducationPreview extends React.Component {
         
         return(
             <div>
-                <h4 className="preview-title">Educational History</h4>
+                <h4 className="preview-title">Education</h4>
                 <hr className="hr"></hr>
                 {info.map((item,i) => 
                 <div className="ed-preview-div" key={i} id={this.props.educationId}>

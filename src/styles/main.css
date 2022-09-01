@@ -74,7 +74,7 @@ body {
     margin: 0.5rem;
 }
 
-.preview-title, .ed-preview-div {
+.preview-title, .ed-preview-div, .ex-preview-div {
     margin: 0 0 0 1rem;
 }
 
@@ -87,14 +87,14 @@ body {
     border-bottom-width: 0;
 }
 
-.school-name {
+.school-name, .company-name {
     font-weight: 800;
 }
 
-.school-degree {
+.school-degree, .position {
     font-style: italic;
 }
 
-.school-dates {
+.school-dates, .ex-dates {
     font-size: 0.8rem;
 }

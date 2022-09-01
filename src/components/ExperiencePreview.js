@@ -5,14 +5,13 @@ class ExperiencePreview extends React.Component {
         const info = this.props.info.experience;
         return(
             <div>
+                <h4 className="preview-title">Experience</h4>
+                <hr className="hr"></hr>
                 {info.map((item,i) => 
-                <ul key={i}>
-                    <li>Company: {item.company}</li>
-                    <li>Position: {item.position}</li>
-                    <li>Location: {item.location}</li>
-                    <li>Start Date: {item.start}</li>
-                    <li>End Date: {item.end}</li>
-                </ul>
+                <div className='ex-preview-div' key={i}>
+                    <div><span className='company-name'>{item.company}</span>, {item.location} - <span className='position'>{item.position}</span></div>
+                    <div className='ex-dates'>{item.start} - {item.end}</div><br></br><br></br>
+                </div>
                 )}
             </div>
         )
