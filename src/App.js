@@ -110,7 +110,8 @@ class App extends React.Component {
     event.preventDefault();
     const edList = this.state.edList;
     const education = this.state.education;
-    let index = this.state.education.length;
+    let _ = require('lodash');
+    let index = _.uniqueId();
       this.setState({
         education: education.concat({
           id: index,  
@@ -123,7 +124,7 @@ class App extends React.Component {
         }),  
         edList: edList.concat(
           <Education 
-          key={edList.length}
+          key={index}
           id={index}  
           education={this.state.education} 
           handleChangeEd={this.handleChangeEd} 
@@ -135,8 +136,8 @@ class App extends React.Component {
       // , () => 
       // console.log(this.state.education)
       );
-      // index++;
-      // console.log(index);
+      index++;
+      console.log(index);
   }
 
   handleDeleteEd(event) {
@@ -147,7 +148,8 @@ class App extends React.Component {
     event.preventDefault();
     const exList = this.state.exList;
     const experience = this.state.experience;
-    let index = this.state.experience.length;
+    let _ = require('lodash');
+    let index = _.uniqueId();
       this.setState({
         experience: experience.concat({
           id: index,
@@ -159,7 +161,7 @@ class App extends React.Component {
         }),  
         exList: exList.concat(
           <Experience 
-          key={exList.length}
+          key={index}
           id={index}  
           experience={this.state.experience} 
           handleChangeEx={this.handleChangeEx} 
@@ -194,7 +196,6 @@ class App extends React.Component {
             />
             <h3>Education</h3>
             <Education 
-            key={this.state.edList.length} 
             id={this.state.education[0].id} 
             education={this.state.education} 
             handleChangeEd={this.handleChangeEd} 
