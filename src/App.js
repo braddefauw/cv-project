@@ -114,7 +114,7 @@ class App extends React.Component {
     let index = _.uniqueId();
       this.setState({
         education: education.concat({
-          id: index,  
+          id: Number(index),  
           school: '',
           location: '',
           degree: '',
@@ -137,11 +137,18 @@ class App extends React.Component {
       // console.log(this.state.education)
       );
       index++;
-      console.log(index);
+      // console.log(index);
   }
 
-  handleDeleteEd(event) {
-    console.log("test ed");
+  handleDeleteEd(e) {
+    e.preventDefault();
+    let array = [...this.state.education];
+    let index = e.target.parentElement.id;
+    console.log(array, index);
+    // if(index !== -1){
+    //   array.splice(index, 1);
+    //   this.setState({edList: array})
+    // }
   }
 
   handleAddEx(event) {
@@ -152,7 +159,7 @@ class App extends React.Component {
     let index = _.uniqueId();
       this.setState({
         experience: experience.concat({
-          id: index,
+          id: Number(index),
           company: '',
           position: '',
           location: '',
