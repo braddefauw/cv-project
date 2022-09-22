@@ -30,7 +30,7 @@ class Education extends React.Component {
                 </label>
                 <br></br>
                 <button className="btn" onClick={this.props.handleAddEd}>Add</button>
-                <button className="btn" id={id} onClick={this.props.handleDeleteEd}>Delete</button>
+                {/* <button className="btn" id={id} onClick={this.props.handleDeleteEd}>Delete</button> */}
             </div>
         )
     }

@@ -26,7 +26,7 @@ class Experience extends React.Component {
                 </label>
                 <br></br>
                 <button className="btn" onClick={this.props.handleAddEx}>Add</button>
-                <button className="btn" onClick={this.props.handleDeleteEx}>Delete</button>
+                {/* <button className="btn" onClick={this.props.handleDeleteEx}>Delete</button> */}
             </div>
         )
     }

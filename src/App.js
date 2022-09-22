@@ -48,8 +48,8 @@ class App extends React.Component {
     this.handleChangeEx = this.handleChangeEx.bind(this);
     this.handleAddEd = this.handleAddEd.bind(this);
     this.handleAddEx = this.handleAddEx.bind(this)
-    this.handleDeleteEd = this.handleDeleteEd.bind(this);
-    this.handleDeleteEx = this.handleDeleteEx.bind(this);
+    // this.handleDeleteEd = this.handleDeleteEd.bind(this);
+    // this.handleDeleteEx = this.handleDeleteEx.bind(this);
   }
 
   handleChangeGen(event){
@@ -140,16 +140,22 @@ class App extends React.Component {
       // console.log(index);
   }
 
-  handleDeleteEd(e) {
-    e.preventDefault();
-    let array = [...this.state.education];
-    let index = e.target.parentElement.id;
-    console.log(array, index);
-    // if(index !== -1){
-    //   array.splice(index, 1);
-    //   this.setState({edList: array})
-    // }
-  }
+  // handleDeleteEd(e) {
+  //   e.preventDefault();
+  //   let array = [...this.state.education];
+  //   let index = Number(e.target.parentElement.id);
+  //   console.log(array, index);
+  //   if(index !== -1){
+  //     array.splice(index, 1);
+  //     console.log(array);
+  //     this.setState({
+  //       education: array
+  //     }, () => console.log(this.state))
+  //     // this.setState({
+  //     //   newArr: array
+  //     // }, console.log(this.state))
+  //   }
+  // }
 
   handleAddEx(event) {
     event.preventDefault();
@@ -184,9 +190,9 @@ class App extends React.Component {
       // console.log(index);
   }
 
-  handleDeleteEx(event) {
-    console.log("test ex");
-  }
+  // handleDeleteEx(event) {
+  //   console.log("test ex");
+  // }
   
   render(){
     return(
